@@ -1,0 +1,79 @@
+<div class="col-lg-10">
+    <h3>{{title}}</h3>
+
+
+    <div class="people" *ngIf="messages">
+        <div *ngFor="let message of messages" class="item-user">
+            <!---Listado-->
+            <div class="panel panel-default" *ngIf="message.emitter">
+                <div class="panel-body">
+
+                    <div class="image_user pull-left">
+                        <a href="#">
+                            <img src ="{{url + 'get-image-user/' + message.emitter.image}}" *ngIf="message.emitter.image" />
+                            <img src ="assets/user.png" *ngIf="!message.emitter.image" />
+                        </a>
+                    </div>
+                    <div class="user_name pull-left">
+                        <p class="name-surname">
+                            <a [routerLink]="['/perfil', message.emitter._id]">
+                                {{message.emitter.name + '' + message.emitter.surname}}
+                            </a>
+                            &nbsp;|&nbsp;
+
+                            <span class="nickname">{{message.emitter.nick}}</span>
+                            &nbsp;|&nbsp;
+
+                            <span class="date nickname">
+                                {{(message.created_at | amFromUnix) | amLocale: 'es' | amTimeAgo}} <!-- convierte el time stamp primero a date, despues le defino el idioma y despues lo pasa por el timeago-->
+                            </span>
+
+                            &nbsp;|&nbsp;
+
+                            <span class="date">
+                                Enviado a <a [routerLink]="['/perfil', message.receiver._id]">{{message.receiver.name+ ' ' + message.receiver.surname}}</a> <!-- convierte el time stamp primero a date, despues le defino el idioma y despues lo pasa por el timeago-->
+                            </span>
+                        </p>
+                        <p >
+                            {{message.text}}
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- Seguir/dejar de seguir -->
+                    <div class="pull-right" *ngIf="message.emitter._id != identity._id">
+                        <button class="btn btn-success" *ngIf="follows.toString().indexOf(message.emitter._id) < 0 "  (click)="followUser(message.emitter._id)">
+                            <span class="glyphicon glyphicon-plus-sign"></span>Seguir
+                        </button>
+
+
+                        <button class="btn btn-primary" *ngIf="follows.toString().indexOf(message.emitter._id) >= 0" (mouseenter)="mouseEnter(message.emitter._id)" (mouseleave)="mouseLeave(message.emitter._id)"  [class.btn-danger]="message.emitter._id == followUserOver" (click)="unfollowUser(message.emitter._id)">
+
+                            <span *ngIf="message.emitter._id == followUserOver ; else following">
+                                <span class="glyphicon glyphicon-minus-sign"></span>Dejar de seguir
+                            </span>
+
+                            <ng-template #following >
+                                <span class="glyphicon glyphicon-ok-sign"></span>Siguiendo
+                            </ng-template>
+
+
+                        </button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- Paginacion -->
+        <ul class="pagination pull-right">
+            <li *ngIf="page > 1 "> <a [routerLink]="['/mensajes/enviados',  prev_page]"> Anterior </a> </li>
+            <li *ngIf="pages != page "> <a [routerLink]="['/mensajes/enviados',  next_page]"> Siguiente </a> </li>
+        </ul>
+    </div>
+
+
+
+</div>

@@ -1,0 +1,259 @@
+/*prueba*/
+
+/*Generales*/
+.h1Strong{
+  font-size: 35px;
+  font-weight: bold;
+  /* margin-left: 13px; */
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.navbar .active{
+    background: #cc1717;
+}
+
+/*Cabecera*/
+
+.navbar-default{
+  background: #ff0808 !important;
+}
+
+.navigation{
+  padding: 0px !important;
+}
+
+.navigation .navbar{
+  border-radius: 0px !important;
+  border: none;
+}
+
+.navigation .navbar a:hover{
+ background: #cc1717 !important;
+}
+
+
+.navbar-default .navbar-brand{
+  color: white !important;
+}
+
+.navigation ul li *{
+  color: white !important;
+}
+
+
+.jumbotron{
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center !important;
+}
+
+.jumbotron p a+a{
+    margin-left: 10px !important;
+}
+
+.navigation .navbar .dropdown-menu *{
+    color: black !important;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus{
+     background: #cc1717 !important;
+}
+
+.navigation .navbar .dropdown .dropdown-menu a:hover{
+ background: #eee !important;
+}
+
+.dropdown{
+    margin-right: 15px;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.imagenSubida img{
+    max-width: 200px !important;
+}
+
+.navigation .avatar img{
+    max-width: 55px;
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+
+/*Usuarios*/
+.people .image_user img,
+.item-user .image_user img,
+.item-publication .image_user img{
+    max-width: 100px;
+    border-radius: 100px;
+    overflow: hidden;
+    margin-right: 20px;
+
+}
+
+.item-publication .user-name{
+    margin-top: 10px;
+
+}
+
+.item-user .user_name .nickname{
+    color :#969393;
+}
+
+.item-user .user_name .name-surname a{
+    color: #555;
+    font-weight: bold;
+}
+/* Sidebar */
+.sidebar-32{
+    width: 32% !important;;
+    padding: 0px !important;
+}
+
+#user-card{
+    padding : 20px;
+    width: 30%;
+}
+
+#new-publication{
+    width: 30%;
+    padding:18px;
+    padding-left: 5px;
+}
+
+#user-card .avatar img{
+    max-width: 110px !important;
+    border-radius: 100px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+#user-card .name-surname{
+    font-weight: 300;
+    font-size : 17px;
+}
+
+
+#user-card .name-surname a{
+    color:  #555;
+}
+#user-card .name-surname .nickname{
+    color:  #969393;
+}
+
+#user-card .label-stats,
+#user-card .number-stats{
+    display: block;
+    text-align:center;
+    transition: all 300ms;
+}
+
+#user-card .label-stats{
+    color: #555;
+    font-weight:  bold;
+}
+#user-card .number-stats{
+    color: green;
+    font-weight:  bold;
+}
+
+#user-card .stats a:hover .number-stats{
+    color: #cc1717;
+    font-weight:  bold;
+}
+
+#user-card .stats{
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+}
+
+#user-card .stats a{
+    text-decoration: none;
+}
+
+#user-card .following-data{
+    float: left;
+    padding-left: 15px;
+    padding-right: 18px;
+    margin-top : 10px;
+    border-right: 2px solid #eee;
+}
+
+#user-card .following-data:first-child{
+    padding-left : 0;
+}
+
+#user-card .following-data:last-child{
+    border: none
+}
+
+/*Timeline */
+
+#publications{
+    min-height: 500px;
+}
+
+#publications .date{
+    color: grey;
+}
+
+
+/* Perfil */
+
+#data-profile{
+    min-height: 230px;
+    text-align : left;
+}
+
+#data-profile .avatar img{
+    max-width: 185px;
+    border-radius: 200px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+#data-profile .user-name .name{
+    font-size: 24px;
+    font-weight: bold;
+    color: #555;
+
+}
+
+#data-profile .user-name{
+    margin-top:15px;
+}
+
+#data-profile .user-name .label{
+    margin-bottom: 15px
+}
+
+
+#data-profile .user-name .nick{
+    font-size: 24px;
+    font-weight: normal;
+    color: grey;
+
+}
+
+#data-profile .stats {
+    border-left: 4px solid #ccc;
+    margin-left: 35px;
+    padding-left: 25px;
+    height: 180px;
+}
+
+#data-profile .stats a{
+    font-size: 20px;
+    line-height: 35px;
+    color: #555;
+}
+
+/* Gente */
+
+.people{
+    min-height: 500px;
+}

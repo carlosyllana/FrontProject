@@ -1,0 +1,51 @@
+<div class="col-lg-10">
+    <h3>{{title}}</h3>
+
+
+    <div class="people" *ngIf="messages">
+        <div *ngFor="let message of messages" class="item-user">
+            <!---Listado-->
+            <div class="panel panel-default">
+                <div class="panel-body" *ngIf="message.emitter">
+
+                    <div class="image_user pull-left">
+                        <a href="#">
+                            <img src ="{{url + 'get-image-user/' + message.emitter.image}}" *ngIf="message.emitter.image" />
+                            <img src ="assets/user.png" *ngIf="!message.emitter.image" />
+                        </a>
+                    </div>
+                    <div class="user_name pull-left">
+                        <p class="name-surname">
+                            <a [routerLink]="['/perfil', message.emitter._id]">
+                                {{message.emitter.name + '' + message.emitter.surname}}
+                            </a>
+                            &nbsp;|&nbsp;
+
+                            <span class="nickname">{{message.emitter.nick}}</span>
+                            &nbsp;|&nbsp;
+
+                            <span class="date nickname">
+                                {{(message.created_at | amFromUnix) | amLocale: 'es' | amTimeAgo}} <!-- convierte el time stamp primero a date, despues le defino el idioma y despues lo pasa por el timeago-->
+                            </span>
+
+                        </p>
+                        <p >
+                            {{message.text}}
+                        </p>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- Paginacion -->
+        <ul class="pagination pull-right">
+            <li *ngIf="page > 1 "> <a [routerLink]="['/mensajes/recibidos',  prev_page]"> Anterior </a> </li>
+            <li *ngIf="pages != page "> <a [routerLink]="['/mensajes/recibidos',  next_page]"> Siguiente </a> </li>
+        </ul>
+    </div>
+
+
+
+</div>
